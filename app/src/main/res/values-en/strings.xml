@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YouMovies</string>
+    <string name="button_text">Click EN</string>
+    <string name="hello">Salut Monde</string>
+    <string name="test1">test1</string>
+    <string name="test3">test3</string>
+    <string name="test4">test4</string>
+</resources>
