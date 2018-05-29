@@ -18,13 +18,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.377" />
 
-    
+
     <Button
+        android:id="@+id/button_text"
         android:layout_width="122dp"
         android:layout_height="111dp"
         android:layout_centerInParent="true"
-        android:text="Rechercher les films"
+        android:text="@string/button_text"
         tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="384dp" />/>
+        tools:layout_editor_absoluteY="384dp" />
+
+    <Button
+        android:id="@+id/button_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="33dp" />
 
 </android.support.constraint.ConstraintLayout>
