@@ -52,14 +52,6 @@ public class Movies extends AppCompatActivity {
         IntentFilter intentFilter = new IntentFilter(MOVIES_UPDATE);
         LocalBroadcastManager.getInstance(this).registerReceiver(new MoviesUpdate(), intentFilter);
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
-        mBuilder.setSmallIcon(android.R.drawable.ic_dialog_info);
-        mBuilder.setContentTitle("Film");
-        mBuilder.setContentText("Voici Les films");
-        mBuilder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, mBuilder.build());
 
     }
 
@@ -93,7 +85,7 @@ public class Movies extends AppCompatActivity {
         @Override
         public void onBindViewHolder(MoviesHolder holder, int position) {
             try {
-                holder.name.setText(movies.getJSONObject(position).get("name").toString());
+                holder.name.setText(movies.getJSONObject(position).get("title").toString());
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.MenuItem;
+import android.view.Menu;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -76,7 +78,28 @@ public class MainActivity extends AppCompatActivity {
 
 
             }
-        });
+        });}
+
+        public boolean onOptionsItemSelected(MenuItem item) {
+            int id = item.getItemId();
+            if (id == R.id.Settings) {
+                Toast.makeText(getApplicationContext(), getString(R.string.Do_you_want_to_change_the_settings), Toast.LENGTH_SHORT).show();
+            } else if (id == R.id.Help) {
+                Toast.makeText(getApplicationContext(), getString(R.string.Do_you_need_help), Toast.LENGTH_SHORT).show();
+            }
+            return super.onOptionsItemSelected(item);
+        }
+
+        public boolean onCreateOptionsMenu(Menu menu) {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.main_menu, menu);
+            return true;
+        }
+
+/** Bouton fesont appel à GoogleMaps */
+        public void GoogleMaps(View v) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=Batman")));
+        }
 
 
-    }}
+    }

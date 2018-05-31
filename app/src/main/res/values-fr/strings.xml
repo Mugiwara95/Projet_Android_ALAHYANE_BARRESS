@@ -9,4 +9,10 @@
     <string name="notif_text">Le film est</string>
     <string name="phone">0609157467</string>
     <string name="notif_title">Liste film</string>
+    <string name="GoogleMaps">GoogleMaps</string>
+
+    <string name="Do_you_want_to_change_the_settings">Vous voulez changer les paramètres ?</string>
+    <string name="Do_you_need_help">Vous avez besoin d aide ?</string>
+    <string name="Help">Aide</string>
+    <string name="Settings">Paramètres</string>
 </resources>

@@ -39,7 +39,7 @@ public class GetMoviesService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             final String action = intent.getAction();
-            if (get_movies.equals(action)) {
+            if (Movies.MOVIES_UPDATE.equals(action)) {
                 handleActionMovies();
 
             }
@@ -59,13 +59,16 @@ public class GetMoviesService extends IntentService {
             if (HttpsURLConnection.HTTP_OK == conn.getResponseCode()) {
                 copyInputStreamToFile(conn.getInputStream(), new File(getCacheDir(), "movies.json"));
                 Log.d(TAG, " Le fichier JSON a été téléchargé !");
+                LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(Movies.MOVIES_UPDATE));
+            }else {
+                Log.e(TAG, "CONNECTION ERROR" + conn.getResponseCode());
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(Movies.MOVIES_UPDATE));
+
 
     }
 
