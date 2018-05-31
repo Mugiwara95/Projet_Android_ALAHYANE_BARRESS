@@ -1,10 +1,29 @@
 package org.esiea.alahyane_barres.youmovies;
 
 
+import android.app.IntentService;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+import android.support.v4.content.LocalBroadcastManager;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import static android.content.ContentValues.TAG;
+
 public class GetMoviesService extends IntentService {
 
     private static final String get_movies = "org.esiea.alahyane.youmovies.action.GetMoviesService";
-
+    private static final String TAG = "GetMoviesServices";
 
 
     public GetMoviesService() {
@@ -48,9 +67,10 @@ public class GetMoviesService extends IntentService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(Movies.MOVIES_UPDATE));
 
     }
-    LocalBroadcastManager.getInstance(this).sendBroadcast(new Intent(MainActivity.MOVIES_UPDATE));
+
 
 
     private void copyInputStreamToFile(InputStream in, File file) {

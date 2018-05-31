@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuInflater;
 
@@ -24,18 +26,19 @@ import static android.content.ContentValues.TAG;
 public class Movies extends AppCompatActivity {
 
 
-    GetMoviesService.startActionMovie(this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
+        GetMoviesService.startActionMovie(this);
 
         IntentFilter intentFilter = new IntentFilter(MOVIES_UPDATE);
         LocalBroadcastManager.getInstance(this).registerReceiver(new MoviesUpdate(),intentFilter);
     }
 
-    public static final String MOVIES_UPDATE = "com.esiea.alahyane_barres.youmovies.MOVIES_UPDATE";
+    public static final String MOVIES_UPDATE = "org.esiea.alahyane_barres.youmovies.MOVIES_UPDATE";
     public class MoviesUpdate extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -55,8 +58,8 @@ public class Movies extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             Log.d(TAG, "Intent : " + getIntent().getAction());
             JSONArray array = getMoviesFromFile();
-            WeatherAdapter wa = (WeatherAdapter) recyclerView.getAdapter();
-            wa.setNewWeather(array);
+            MoviesAdapter wa = (MoviesAdapter) recyclerView.getAdapter();
+            wa.setNewMovies(array);
             Log.d("cont ", Integer.toString(array.length()));
         }
     }
