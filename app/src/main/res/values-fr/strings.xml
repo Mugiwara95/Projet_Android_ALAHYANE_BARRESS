@@ -6,5 +6,7 @@
     <string name="Contact">Contactez nous!</string>
     <string name="best_movie_text">Le meilleur film que nous vous conseillons est le parrain !</string>
     <string name="Call">Appelez nous</string>
+    <string name="notif_text">Le film est</string>
     <string name="phone">0609157467</string>
+    <string name="notif_title">Liste film</string>
 </resources>

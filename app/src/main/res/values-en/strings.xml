@@ -6,5 +6,7 @@
     <string name="Contact">Contact Us !</string>
     <string name="best_movie_text">The Best movie is the god father ! !</string>
     <string name="Call">Call us</string>
+    <string name="notif_text">The movie is</string>
     <string name="phone">0609157467</string>
+    <string name="notif_title">Liste film</string>
 </resources>

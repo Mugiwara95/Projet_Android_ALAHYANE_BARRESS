@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">YouMovies</string>
     <string name="button_text">Click</string>
+    <string name="notif_text">Le film est</string>
+    <string name="notif_title">Liste film</string>
 </resources>

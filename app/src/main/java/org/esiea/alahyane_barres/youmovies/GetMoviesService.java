@@ -24,8 +24,6 @@ public class GetMoviesService extends IntentService {
 
     private static final String get_movies = "org.esiea.alahyane.youmovies.action.GetMoviesService";
     private static final String TAG = "GetMoviesServices";
-
-
     public GetMoviesService() {
         super("GetMoviesService");
     }
