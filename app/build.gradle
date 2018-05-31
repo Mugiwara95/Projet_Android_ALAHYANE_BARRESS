@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "org.esiea.alahyane_barres.youmovies"
+        applicationId "org.esiea.alahyane.youmovies"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
