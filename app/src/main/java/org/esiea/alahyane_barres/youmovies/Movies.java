@@ -106,8 +106,8 @@ public class Movies extends AppCompatActivity {
             }
         }
 
-        public void setNewMovies(JSONArray biers) {
-            this.movies = biers;
+        public void setNewMovies(JSONArray movies) {
+            this.movies = movies;
             notifyDataSetChanged();
         }
     /*@Override
